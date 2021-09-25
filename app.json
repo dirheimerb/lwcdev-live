@@ -1,0 +1,17 @@
+{
+    "name": "lwc-dev",
+    "description": "Config for Heroku Pipelines and Review Apps",
+    "repository": "https://github.com/dirheimerb/lwc-dev-liveview",
+    "scripts": {},
+    "env": {
+        "NODE_ENV": {
+            "required": true
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1
+        }
+    },
+    "addons": []
+}

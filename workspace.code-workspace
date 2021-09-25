@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "lwc-dev",
+			"path": "..\\lwc-dev"
+		},
+		{
+			"name": "dist",
+			"path": "Z:\\Work Development\\Salesforce Development Tools\\lwc-recipes-oss-main\\dist"
+		}
+	],
+	"settings": {}
+}

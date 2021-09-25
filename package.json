@@ -1,0 +1,61 @@
+{
+    "name": "lwc-devhub",
+    "version": "0.2.0",
+    "author": "Brad Dirheimer",
+    "bugs": "https://github.com/dirheimerb/issues",
+    "dependencies": {
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "yarn": "^1.22.11"
+    },
+    "description": "Lightning Web Components Recipes Open Source",
+    "devDependencies": {
+        "@sa11y/jest": "0.4.3",
+        "@salesforce/wire-service-jest-util": "^4.0.0",
+        "chart.js": "^3.5.0",
+        "d3": "^7.0.0",
+        "eslint": "^7.32.0",
+        "husky": "^7.0.1",
+        "jest-canvas-mock": "^2.3.1",
+        "lint-staged": "^11.1.1",
+        "lwc-recipes-oss-ui-components": "^0.3.2",
+        "lwc-services": "^3.1.2",
+        "prettier": "^2.3.2"
+    },
+    "homepage": "https://github.com/dirheimerb",
+    "keywords": [
+        "lwc"
+    ],
+    "scripts": {
+        "build": "lwc-services build --mode production",
+        "build:development": "lwc-services build",
+        "lint": "eslint ./src/**/*.js",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,yaml,yml}\"",
+        "serve": "node scripts/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "lwc-services watch",
+        "watch:production": "lwc-services watch --mode=production",
+        "postinstall": "husky install",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+            "prettier --write"
+        ],
+        "**/{aura,lwc}/**": [
+            "eslint"
+        ],
+        "**/lwc/**": [
+            "sfdx-lwc-jest --skipApiVersionCheck -- --bail --findRelatedTests"
+        ]
+    },
+    "volta": {
+        "node": "14.17.3",
+        "yarn": "1.22.10"
+    }
+}
